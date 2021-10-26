@@ -1,0 +1,44 @@
+<p-card>
+
+  <div id="content" #content>
+  <h4><u>Liste des candidatures</u></h4>
+
+
+  <p-table #dt [columns]="cols" id="excel-table" [value]="personel" [responsive]="true" [paginator]="true" [rows]="5" [showCurrentPageReport]="true" >
+    <ng-template pTemplate="caption">
+      <div class="ui-helper-clearfix" style="text-align: left">
+        <button type="button" pButton icon="pi pi-file-excel" iconPos="left" label="EXCEL" (click)="exportexcel()" style="margin-right: 0.5em;" class="ui-button-success"></button>
+        <button type="button" pButton icon="pi pi-file-pdf" iconPos="left" label="PDF" (click)="Screen()" class="ui-button-warning"></button>
+
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="header" >
+      <tr >
+        <th style="background-color: #3F51B5; color: white;"> Nom et prenom</th>
+        <th style="background-color: #3F51B5; color: white;">Date de naissance</th>
+        <th style="background-color: #3F51B5; color: white; width: 30%;">Email</th>
+        <th style="background-color: #3F51B5; color: white;">Localisation</th>
+        <th style="background-color: #3F51B5; color: white;">Telephone</th>
+        <th style="background-color: #3F51B5; color: white;">Action</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-personel>
+      <tr >
+
+        <td>  {{personel.nom}}  {{personel.prenom}}</td>
+        <td>{{personel.dateNaissance}}</td>
+        <td><p> {{personel.email}}</p></td>
+        <td>{{personel.localisation}}</td>
+        <td> {{personel.numTel}}</td>
+        <td> <button  mat-raised-button color="primary" routerLink="../Detail/{{personel.id}}" > Details</button> </td>
+      </tr>
+    </ng-template>
+
+
+
+  </p-table>
+
+  </div>
+</p-card>

@@ -1,0 +1,178 @@
+
+<div class="ui-g">
+  <div class="ui-g-5">
+
+
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image" style="width: 100px;" *ngIf="personel.etat===null">
+
+
+        <button mat-mini-fab aria-label="Example icon-button with a heart icon" (click)="entretien1(personel.email)">
+          <mat-icon>favorite</mat-icon>
+        </button>
+
+        </div>
+        <mat-card-title>{{personel.nom}} {{personel.prenom}}</mat-card-title>
+        <mat-card-subtitle>{{personel.email}}</mat-card-subtitle>
+        <mat-card-subtitle>{{personel.numTel}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="../../../assets/photo/49299949ggg.png" >
+      <mat-card-content>
+        <p innerHTML=" {{personel.motivation}}
+">
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button   mat-raised-button ><a href="../../../assets/photo/cv%20yahya.pdf" target="_blank">CV</a> </button>
+        <button   mat-raised-button ><a href="../../../assets/photo/carte_identite.jpg" target="_blank">CIN</a> </button>
+        <button   mat-raised-button ><a href="../../../assets/photo/photo_passeport.jpg" target="_blank">Passeport</a> </button>
+
+      </mat-card-actions>
+    </mat-card>
+
+
+
+
+  </div>
+  <div class="ui-g-7">
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title >
+            <b> Les compétences techniques</b>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header >
+        <mat-list *ngFor="let tech of technique" >
+          <mat-list-item  >{{tech.competence}}</mat-list-item>
+          <mat-divider></mat-divider>
+
+
+        </mat-list>
+      </mat-expansion-panel>
+
+
+
+
+
+
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title >
+            <b> Les compétences socials</b>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header >
+        <mat-list *ngFor="let tech of social" >
+          <mat-list-item  >{{tech.competence}}</mat-list-item>
+          <mat-divider></mat-divider>
+
+
+        </mat-list>
+      </mat-expansion-panel>
+
+
+
+
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title >
+            <b> La formation</b>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header >
+        <mat-list *ngFor="let tech of formation" >
+          <mat-list-item  >{{tech.competence}}</mat-list-item>
+          <mat-divider></mat-divider>
+
+
+        </mat-list>
+      </mat-expansion-panel>
+
+
+
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title >
+            <b> Les certifications</b>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header >
+        <mat-list *ngFor="let tech of certification" >
+          <mat-list-item  >{{tech.competence}}</mat-list-item>
+          <mat-divider></mat-divider>
+
+
+        </mat-list>
+      </mat-expansion-panel>
+
+
+
+
+
+
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title >
+            <b> Ces reseaux actifs </b>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header >
+        <mat-list  >
+          <mat-list-item   > <a href="#"> Linkedin </a>  </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item   > <a href="#"> Facebook </a>  </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item   > <a href="#"> Twitter </a>  </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item   > <a href="#"> Indeed </a>  </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item   > <a href="#"> tanitjob </a>  </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item   > <a href="#"> Keejob </a>  </mat-list-item>
+          <mat-divider></mat-divider>
+
+
+
+        </mat-list>
+      </mat-expansion-panel>
+
+
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title >
+            <b> Des autres informations </b>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header >
+        <mat-list >
+          <mat-list-item   > Date de naissance : {{personel.dateNaissance}}  </mat-list-item>
+          <mat-divider></mat-divider>
+
+          <mat-list-item   > Sexe : {{personel.sexe}}  </mat-list-item>
+          <mat-divider></mat-divider>
+
+
+          <mat-list-item   > Source : {{personel.dev}}  </mat-list-item>
+          <mat-divider></mat-divider>
+
+        </mat-list>
+      </mat-expansion-panel>
+
+
+
+
+    </mat-accordion>
+  </div>
+
+
+</div>
+
+

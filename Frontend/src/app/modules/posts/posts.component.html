@@ -1,0 +1,178 @@
+<mat-card id="1">
+  <mat-card-header>
+    <mat-card-title>Etape 1/5</mat-card-title>
+    <mat-card-subtitle>Des informations primaires</mat-card-subtitle>
+  </mat-card-header>
+
+  <br><br>
+  <form class="example-form" [formGroup]="besoinP"  >
+
+
+  <mat-form-field class="example-full-width">
+    <textarea matInput formControlName="mission" placeholder="Mission a realisé" ></textarea>
+  </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput formControlName="speciality" placeholder="Spécialité" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput formControlName="anneeExp" placeholder="Annee d'expérience" type="number" required>
+    </mat-form-field>
+
+    <br>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary" (click)="btn1()">suivant 	<mat-icon>navigate_next</mat-icon></button>
+
+    </div>
+</form>
+
+</mat-card>
+
+
+<mat-card  style="display: none;" id="2">
+  <mat-card-header>
+    <mat-card-title>Etape 2/5</mat-card-title>
+    <mat-card-subtitle>Des compétences techniques</mat-card-subtitle>
+  </mat-card-header>
+
+  <br><br>
+  <form class="example-form" [formGroup]="technique">
+
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput formControlName="comptech1" placeholder="Compétence technique 1"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput  formControlName="comptech2" placeholder="Compétence technique 2"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput formControlName="comptech3"  placeholder="Compétence technique 3"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput formControlName="comptech4"  placeholder="Compétence technique 4"></textarea>
+    </mat-form-field>
+
+
+  </form>
+  <br>
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" (click)="btn2()">suivant 	<mat-icon>navigate_next</mat-icon></button>
+
+  </div>
+</mat-card>
+
+
+
+<mat-card style="display: none;" id="3">
+  <mat-card-header>
+    <mat-card-title>Etape 3/5</mat-card-title>
+    <mat-card-subtitle>Des compétences sociales</mat-card-subtitle>
+  </mat-card-header>
+
+  <br><br>
+  <form class="example-form" [formGroup]="social">
+
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput  formControlName="compsocial1" placeholder="Compétence sociale 1"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput  formControlName="compsocial2" placeholder="Compétence sociale 2"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput  formControlName="compsocial3" placeholder="Compétence sociale 3"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput  formControlName="compsocial4" placeholder="Compétence sociale 4"></textarea>
+    </mat-form-field>
+
+
+  </form>
+  <br>
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" (click)="btn3()">suivant 	<mat-icon>navigate_next</mat-icon></button>
+
+  </div>
+</mat-card>
+
+
+
+<mat-card  style="display: none;" id="4">
+  <mat-card-header>
+    <mat-card-title>Etape 4/5</mat-card-title>
+    <mat-card-subtitle>Des formations</mat-card-subtitle>
+  </mat-card-header>
+
+  <br><br>
+  <form class="example-form" [formGroup]="formation">
+
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput formControlName="formation1" placeholder="formation 1"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput formControlName="formation2" placeholder="formation 2"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput formControlName="formation3" placeholder="formation 3"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput formControlName="formation4" placeholder="formation 4"></textarea>
+    </mat-form-field>
+
+
+  </form>
+  <br>
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" (click)="btn4()">suivant 	<mat-icon>navigate_next</mat-icon></button>
+
+  </div>
+</mat-card>
+
+<mat-card  style="display: none;" id="5">
+  <mat-card-header>
+    <mat-card-title>Etape 5/5</mat-card-title>
+    <mat-card-subtitle>Des certifications</mat-card-subtitle>
+  </mat-card-header>
+
+  <br><br>
+  <form class="example-form" [formGroup]="certification">
+
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput formControlName="certification1" placeholder="certification 1"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput formControlName="certification2" placeholder="certification 2"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput formControlName="certification3" placeholder="certification 3"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput formControlName="certification4" placeholder="certification 4"></textarea>
+    </mat-form-field>
+
+
+  </form>
+  <br>
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" (click)="btn5()" routerLink="../area"
+    > suivant 	<mat-icon>navigate_next</mat-icon></button>
+
+  </div>
+</mat-card>
+
+

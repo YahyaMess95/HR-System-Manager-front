@@ -1,0 +1,32 @@
+<p-card>
+
+
+  <h2>Liste des demandes</h2>
+
+<p-table [columns]="cols" [value]="cars" [responsive]="true" [paginator]="true" [rows]="10" [showCurrentPageReport]="true">
+
+  <ng-template pTemplate="header" >
+    <tr >
+      <th style="background-color: #3F51B5; color: white;"> Spécialité</th>
+      <th style="background-color: #3F51B5; color: white;">Année d'experience</th>
+      <th style="background-color: #3F51B5; color: white;">Mission</th>
+      <th style="background-color: #3F51B5; color: white;">Prix</th>
+      <th style="background-color: #3F51B5; color: white;">Action</th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-car>
+    <tr>
+
+      <td><b> {{car.speciality}}</b></td>
+      <td> <b>{{car.anneeExp}}</b></td>
+      <td><b> {{car.mission}}</b></td>
+      <td><b> {{car.prix}}</b></td>
+      <td><button mat-raised-button color="primary" routerLink="../CreationOffre/{{car.id}}/{{car.mission}}/{{car.speciality}}/{{car.anneeExp}}/{{car.prix}}">Créer une offre d'emploi</button></td>
+    </tr>
+  </ng-template>
+
+
+
+</p-table>
+</p-card>

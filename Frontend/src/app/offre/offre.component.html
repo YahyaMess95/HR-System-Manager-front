@@ -1,0 +1,66 @@
+<body>
+
+  <div class="ui-g">
+    <div class="ui-g-9">
+    </div>
+    <br>
+    <div class="ui-g-3">  <button mat-flat-button color="accent"  routerLink="../../Postulation/{{id}}" style="background-color: #ff9900" >Postuler</button></div>
+  </div>
+
+
+  <div style="text-align: center;"> <h1> Détail de l'offre </h1></div>
+
+  <h3 style="color: #0066cc"><u>Titre :</u></h3>
+  <p> Nous avons besoin d'un <b style="color: #3F51B5"> {{offre.speciality}}</b> pour une mission de <b
+    style="color: #ff9900">{{offre.mission}}</b>
+
+    avec <b style="color: #0066cc">{{offre.anneeExp}}</b> année d'experience et salaire <b style="color: #e60000">{{offre.prix}}
+      dinars </b></p>
+
+  <mat-divider></mat-divider>
+  <br>
+  <h3 style="color: #0066cc" ><u>Descritpion :</u></h3>
+  <div innerHTML="{{offre.desciption}}"></div>
+  <br>
+  <mat-divider></mat-divider>
+
+
+  <div class="ui-g">
+
+    <div class="ui-g-6">
+      <h3 style="color: #0066cc"><u>Les compétences techniques demandés</u></h3>
+      <mat-list *ngFor="let c of technique">
+        <mat-list-item> - {{c.technique}}</mat-list-item>
+      </mat-list>
+
+    </div>
+
+    <div class="ui-g-6">
+      <h3 style="color: #0066cc"><u>Les compétences Socials demandés</u></h3>
+      <mat-list *ngFor="let c of social">
+        <mat-list-item> - {{c.social}}</mat-list-item>
+      </mat-list>
+
+    </div>
+
+    <div class="ui-g-6">
+      <h3 style="color: #0066cc"><u>Les formations demandés</u></h3>
+      <mat-list *ngFor="let c of formation">
+        <mat-list-item> - {{c.formation}}</mat-list-item>
+      </mat-list>
+
+    </div>
+    <div class="ui-g-6">
+      <h3 style="color: #0066cc" ><u>Les certifications demandés</u></h3>
+      <mat-list *ngFor="let c of certification">
+        <mat-list-item> - {{c.certification}}</mat-list-item>
+      </mat-list>
+
+    </div>
+
+  </div>
+
+
+
+
+</body>

@@ -1,0 +1,26 @@
+:host{
+  display: flex;
+flex-direction: column;
+  height: 100%;
+}
+
+mat-drawer{
+  width: 350px;
+}
+mat-drawer-container{height: 100%;}
+
+mat-drawer-content{padding : 20px;}
+
+::ng-deep .blue-snackbar {
+  background: mediumspringgreen;
+  color: black;
+  font-size: 50px;
+
+}
+
+::ng-deep .red-snackbar {
+  background: darkred;
+  color: white;
+  font-size: 50px;
+
+}

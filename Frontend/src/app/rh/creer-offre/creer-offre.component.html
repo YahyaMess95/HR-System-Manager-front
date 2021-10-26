@@ -1,0 +1,96 @@
+<p-card>
+
+<h1> Créer une offre   </h1>
+
+
+
+  <mat-chip-list aria-label="Fish selection">
+    <mat-chip>{{mission}}</mat-chip>
+    <mat-chip  >{{spciality }}</mat-chip>
+    <mat-chip color="primary" selected>{{ anneExp}} ans d'éxpèrience</mat-chip>
+    <mat-chip style="background-color: #ff9900; color: white;" >{{prix}} dinars tunisiens</mat-chip>
+
+  </mat-chip-list>
+
+  <br>
+  <mat-divider></mat-divider>
+
+
+  <h4>Les compétences techniques exigées </h4>
+  <mat-chip-list aria-label="Fish selection" *ngFor="let tech of technique">
+    <mat-chip *ngIf="tech.comptech1!==''">{{tech.comptech1}}</mat-chip>
+    <mat-chip *ngIf="tech.comptech2!==''"> {{tech.comptech2}}</mat-chip>
+    <mat-chip *ngIf="tech.comptech3!==''">{{tech.comptech3}}</mat-chip>
+    <mat-chip *ngIf="tech.comptech4!==''">{{tech.comptech4}}</mat-chip>
+
+  </mat-chip-list>
+
+  <br>
+  <p-chips [(ngModel)]="techs" placeholder="Ajouter des autres ... " ></p-chips>
+  <br>
+  <mat-divider></mat-divider>
+
+
+  <h4>Les compétences sociales exigées </h4>
+  <mat-chip-list aria-label="Fish selection" *ngFor="let tech of social">
+    <mat-chip *ngIf="tech.compsocial1!==''">{{tech.compsocial1}}</mat-chip>
+    <mat-chip *ngIf="tech.compsocial2!==''"> {{tech.compsocial2}}</mat-chip>
+    <mat-chip *ngIf="tech.compsocial3!==''">{{tech.compsocial3}}</mat-chip>
+    <mat-chip *ngIf="tech.compsocial4!==''">{{tech.compsocial4}}</mat-chip>
+
+  </mat-chip-list>
+
+  <br>
+  <p-chips [(ngModel)]="soc" placeholder="Ajouter des autres ... " ></p-chips>
+  <br>
+
+  <mat-divider></mat-divider>
+
+
+  <h4>Les formations exigés </h4>
+  <mat-chip-list aria-label="Fish selection" *ngFor="let tech of formation">
+    <mat-chip *ngIf="tech.formation1!==''">{{tech.formation1}}</mat-chip>
+    <mat-chip *ngIf="tech.formation2!==''"> {{tech.formation2}}</mat-chip>
+    <mat-chip *ngIf="tech.formation3!==''">{{tech.formation3}}</mat-chip>
+    <mat-chip *ngIf="tech.formation4!==''">{{tech.formation4}}</mat-chip>
+
+  </mat-chip-list>
+  <br>
+  <p-chips [(ngModel)]="for" placeholder="Ajouter des autres ... " ></p-chips>
+  <br>
+  <mat-divider></mat-divider>
+
+
+  <h4>Les certifications exigés </h4>
+  <mat-chip-list aria-label="Fish selection" *ngFor="let tech of certification">
+    <mat-chip *ngIf="tech.certification1!==''">{{tech.certification1}}</mat-chip>
+    <mat-chip *ngIf="tech.certification2!==''"> {{tech.certification2}}</mat-chip>
+    <mat-chip *ngIf="tech.certification3!==''">{{tech.certification3}}</mat-chip>
+    <mat-chip *ngIf="tech.certification4!==''">{{tech.certification4}}</mat-chip>
+
+  </mat-chip-list>
+  <br>
+  <p-chips [(ngModel)]="certs" placeholder="Ajouter des autres ... " ></p-chips>
+  <br>
+  <mat-divider></mat-divider>
+  <br>
+  <h4>La desciption de l'offre </h4>
+  <p-editor [(ngModel)]="text1" [style]="{'height':'320px'}"></p-editor>
+
+
+
+
+
+  <div class="ui-g">
+    <div class="ui-g-5"></div>
+
+    <div class="ui-g-2">  <button mat-raised-button color="primary" (click)="ajouterOffre()"><mat-icon>library_add</mat-icon> Ajouter l'offre </button></div>
+
+    <div class="ui-g-3"></div>
+  </div>
+
+</p-card>
+
+
+
+

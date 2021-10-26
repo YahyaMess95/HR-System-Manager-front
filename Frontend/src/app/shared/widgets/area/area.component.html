@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #customers {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #3f51b5;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<mat-card>
+  <mat-card-title>Liste des demandes </mat-card-title>
+  <mat-divider></mat-divider>
+  <br>
+<table id="customers">
+  <tr>
+    <th>Spécialité</th>
+    <th>Année d'experience</th>
+    <th>Mission</th>
+    <th>Etat</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let dem of demande">
+    <td>{{dem.speciality}}</td>
+    <td>{{dem.anneeExp}}</td>
+    <td>{{dem.mission}}</td>
+    <td><mat-chip-list>
+      <mat-chip *ngIf="dem.etat==='refusé'" style="background-color: red;"> {{dem.etat}}</mat-chip>
+      <mat-chip *ngIf="dem.etat==='accepté'" style="background-color: greenyellow; color:black;-o"> {{dem.etat}}</mat-chip>
+      <mat-chip *ngIf="dem.etat==='a valider'"> {{dem.etat}}</mat-chip>
+
+    </mat-chip-list></td>
+    <td><button mat-raised-button color="primary"   routerLink="../detail/{{dem.id}}">details</button> </td>
+  </tr>
+
+
+</table>
+</mat-card>
+</body>
+</html>

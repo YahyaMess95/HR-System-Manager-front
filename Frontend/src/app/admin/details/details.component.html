@@ -1,0 +1,131 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title >
+        <b> Les compétences techniques</b>
+      </mat-panel-title>
+
+    </mat-expansion-panel-header >
+    <mat-list *ngFor="let tech of technique" >
+      <mat-list-item *ngIf="tech.comptech1!==''" >{{tech.comptech1}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="tech.comptech2!==''">{{tech.comptech2}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="tech.comptech3!==''">{{tech.comptech3}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="tech.comptech4!==''">{{tech.comptech4}}</mat-list-item>
+
+
+    </mat-list>
+  </mat-expansion-panel>
+
+
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <b> Les compétences sociales</b>
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+    <mat-list *ngFor="let soc of social" >
+      <mat-list-item *ngIf="soc.compsocial1!==''" >{{soc.compsocial1}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="soc.compsocial2!==''" >{{soc.compsocial2}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="soc.compsocial3!==''" >{{soc.compsocial3}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="soc.compsocial4!==''" >{{soc.compsocial4}}</mat-list-item>
+      <mat-divider></mat-divider>
+
+    </mat-list>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <b> Les certifications</b>
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+    <mat-list *ngFor="let cert of certification" >
+      <mat-list-item *ngIf="cert.certification1!==''" >{{cert.certification1}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="cert.certification2!==''" >{{cert.certification2}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="cert.certification3!==''" >{{cert.certification3}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="cert.certification4!==''" >{{cert.certification4}}</mat-list-item>
+      <mat-divider></mat-divider>
+
+
+    </mat-list>
+  </mat-expansion-panel>
+
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <b> Les formations</b>
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+    <mat-list *ngFor="let form of formation" >
+      <mat-list-item *ngIf="form.formation1!==''" >{{form.formation1}}</mat-list-item>
+      <mat-divider></mat-divider>
+
+      <mat-list-item *ngIf="form.formation2!==''" >{{form.formation2}}</mat-list-item>
+      <mat-divider></mat-divider>
+
+      <mat-list-item *ngIf="form.formation3!==''" >{{form.formation3}}</mat-list-item>
+      <mat-divider></mat-divider>
+
+      <mat-list-item *ngIf="form.formation4!==''" >{{form.formation4}}</mat-list-item>
+      <mat-divider></mat-divider>
+
+
+
+
+    </mat-list>
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+<br><br>
+<mat-card>
+  <mat-card-subtitle > <b>Prendre une decision</b> </mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <br>
+  <mat-form-field>
+    <mat-label >Décision</mat-label>
+
+    <mat-select [(value)]="dec" (selectionChange)="test(dec)">
+      <mat-option   *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+
+
+<form [formGroup]="bug">
+  <div class="example-container" id="budget" style="display:none;">
+    <mat-form-field >
+      <input matInput placeholder="Budget"  formControlName="budget" type="number">
+
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="accept()">Ajouter</button>
+  </div>
+</form>
+
+<form [formGroup]="com">
+  <div class="example-container" id="commentaire" style="display: none;">
+    <mat-form-field >
+      <input formControlName="commentaire" matInput placeholder="Commentaire" type="text">
+    </mat-form-field>
+    <button mat-raised-button color="warn"  (click)="refuser()">Ajouter</button>
+  </div>
+</form>
+
+</mat-card>

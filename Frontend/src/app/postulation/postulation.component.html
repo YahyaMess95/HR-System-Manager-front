@@ -1,0 +1,343 @@
+<body>
+<mat-toolbar style="background-color: #ff9900; color: #3F51B5;">GERANCE INFORMATIQUE</mat-toolbar>
+<br>
+
+
+<div class="ui-g">
+  <div class="ui-g-6">
+
+    <mat-accordion>
+      <mat-expansion-panel>
+
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <u> <b>Des informations personnels </b> </u>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="example-container" [formGroup]="PersonelF" >
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Nom" formControlName="nom">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Prenom" formControlName="prenom">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email" type="email" formControlName="email">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Téléphone" type="number" formControlName="telephone">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput type="date" placeholder="Date de naissance" formControlName="dateNaissance">
+
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width" >
+
+            <select matNativeControl required  id="localisation" >
+            <option selected disabled>Localisation</option>
+            <option *ngFor="let l of Lieux"  value="{{l.gouvernorat}}-{{l.Latitude}}-{{l.Longitude}}">
+              {{l.gouvernorat}}
+            </option>
+            </select>
+          </mat-form-field>
+
+          <br><br>
+
+          <mat-form-field class="example-full-width">
+
+            <select matNativeControl required  id="sx">
+            <option selected disabled>Sexe</option>
+            <option value="Homme">Homme</option>
+            <option value="Femme">Femme</option>
+            </select>
+          </mat-form-field>
+
+          <br><br>
+          <mat-form-field class="example-full-width">
+
+            <select matNativeControl required  id="sf">
+            <option selected disabled>Situation familiale</option>
+            <option value="Single">Single</option>
+            <option value="Devorcé"> Dévorcé(e)</option>
+            <option value="Marié">Marié(e)</option>
+            </select>
+          </mat-form-field>
+
+
+        </div>
+
+
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+
+  </div>
+
+  <div class="ui-g-6">
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <u>
+              <b>
+                Des liens utiles
+              </b>
+            </u>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+
+
+<div [formGroup]="LienF">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Linkedin" formControlName="linkedin">
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Indeed"  formControlName="indeed">
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Tanitjob" formControlName="tanitjob">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Keejob" formControlName="keejob">
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="twitter" formControlName="twitter">
+        </mat-form-field>
+
+
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="facebook" formControlName="facebook">
+        </mat-form-field>
+</div>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+
+  </div>
+
+
+  <div class="ui-g-6">
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <u>
+              <b>
+                Des Compétences
+              </b>
+            </u>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+
+        <div>
+          <label> Les compétences techniques : </label>
+          <br><br>
+          <p-chips [(ngModel)]="technique" placeholder="technique"></p-chips>
+        </div>
+
+        <br>
+
+        <div>
+          <label> Les compétences Sociales : </label>
+          <br><br>
+          <p-chips [(ngModel)]="social" placeholder="social"></p-chips>
+        </div>
+        <br>
+        <div>
+          <label> Les certifications : </label>
+          <br><br>
+          <p-chips [(ngModel)]="certification" placeholder="certification"></p-chips>
+        </div>
+
+        <br>
+        <div>
+          <label> La formation </label>
+          <br><br>
+          <p-chips [(ngModel)]="formation" placeholder="formation"></p-chips>
+        </div>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+
+  </div>
+
+
+  <div class="ui-g-6">
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <u>
+              <b>
+                Des documents confidentiels
+              </b>
+            </u>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+
+        <div>
+          <label style="color: #3F51B5;"> Ajouter votre CV : </label>
+          <br>
+          <br>
+          <label class="btn btn-default">
+            <input type="file" (change)="selectFilecv($event)" />
+          </label>
+        </div>
+        <br>
+
+        <div>
+          <label style="color: #3F51B5;">Ajouter votre CIN : </label>
+          <br>
+          <br>
+          <label class="btn btn-default">
+            <input type="file" (change)="selectFilerecto($event)" />
+          </label>
+        </div>
+
+        <br>
+
+        <div>
+          <label style="color: #3F51B5;">Ajouter votre Passeport : </label>
+          <br>
+          <br>
+          <label class="btn btn-default">
+            <input type="file" (change)="selectFileverso($event)" />
+          </label>
+        </div>
+
+        <br>
+        <div>
+          <label style="color: #3F51B5;">Votre photo (Selfie different de votre photo dans le cv*): </label>
+          <br>
+          <br>
+          <label class="btn btn-default">
+            <input type="file" (change)="selectFilephoto($event)" />
+          </label>
+        </div>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+
+  </div>
+
+  <div class="ui-g-6">
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <u>
+              <b>
+                Lettre de motivation
+              </b>
+            </u>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+
+        <div>
+
+          <p-editor [(ngModel)]="text" [style]="{'height':'300px'}"></p-editor>
+
+
+        </div>
+
+
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+
+  </div>
+
+
+  <div class="ui-g-6">
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <u>
+              <b>
+                Des questions pour améliorer notre plateforme
+              </b>
+            </u>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+
+        <div>
+
+          <label > vous avez trouvé notre offre dans :</label>
+          <br>
+
+          <select class="example-full-width" style="background-color: #3F51B5; color: white;" id="dev">
+            <option selected disabled>Rien</option>
+            <option>Linkedin</option>
+            <option>TanitJob</option>
+            <option>Keejob</option>
+          </select>
+
+        </div>
+
+
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+
+  </div>
+
+</div>
+<br>
+<div style="text-align: center;">
+  <p-triStateCheckbox [(ngModel)]="confid" label=" J'accepte  les Politiques de confidentialité"></p-triStateCheckbox>
+
+</div>
+<br>
+<div style="text-align: center;">
+  <button mat-raised-button color="primary" (click)="addPostulation()">Postuler</button>
+
+</div>
+
+
+
+
+
+<div>
+
+
+</div>
+
+
+
+
+
+
+
+
+</body>

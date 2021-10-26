@@ -1,0 +1,25 @@
+table {
+  width: 100%;
+
+}
+.mat-elevation-z8 {
+  height: 400px;
+  overflow: auto;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.yahya1{margin-top: 5%;}
+
+.pagination li:hover{
+  cursor: pointer;
+}
+table tbody tr {
+  display: none;
+}
+.mat-chip {
+
+  background-color: coral;
+  color: white;
+}
